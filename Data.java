@@ -30,7 +30,6 @@ public class Data {
     }
 
     public void entraDia(int dia) {
-        while(true) {
             try {
                 if (dia < 1 || dia > 31) {
                     System.out.println("Dia invalido. Deve estar entre 1 e 31.");
@@ -38,29 +37,25 @@ public class Data {
                     this.dia = dia;
                 }
             } catch (InputMismatchException error) {
-                    System.out.println("Digite um numero inteiro valido.");
+                    System.out.println("Numero inteiro invalido.");
             }
-        }
     }
 
     public void entraMes(int mes) {
-        while(true) {
             try {
                 if (mes < 1 || mes > 12) {
-                    System.out.println("Mes invalida. Deve estar entre 1 e 12.");
+                    System.out.println("Mes invalido. Deve estar entre 1 e 12.");
                 } else if ((mes == 2 && dia > 29) || (mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {
                     System.out.println("Mes invalido para o dia " + dia);
                 } else {
                     this.mes = mes;
                 }
             } catch (InputMismatchException error) {
-                System.out.println("Digite um numero inteiro valido.");
+                System.out.println("Numero inteiro invalido.");
             }
-        }
     }
 
     public void entraAno(int ano) {
-        while(true) {
             try {
                 if (ano < 1900 || ano > 2100) {
                     System.out.println("Ano invalido. Deve estar entre 1900 e 2100.");
@@ -70,9 +65,8 @@ public class Data {
                     this.ano = ano;
                 }
             } catch (InputMismatchException error) {
-                System.out.println("Digite um numero inteiro valido.");
-            }
-        }
+                System.out.println("Numero inteiro invalido.");
+            } 
     }
 
     public void entraDia() {
@@ -154,8 +148,12 @@ public class Data {
         return this.ano;
     }
 
-    public String mostra1() {
-        return String.format("%02d/%02d/%04d", this.dia, this.mes, this.ano);
+    public void mostra1() {
+	System.out.println("--------------------");
+	System.out.println("| Dia | Mes | Ano  |");
+	System.out.println("--------------------");
+        System.out.println(String.format("|  %02d |  %02d | %04d |", this.dia, this.mes, this.ano));
+	System.out.println("--------------------");
     }
 
     public String mostra2() {
